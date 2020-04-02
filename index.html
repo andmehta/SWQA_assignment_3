@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>PyPy.js</title>
+  <title>SWQA Assignment 3</title>
 
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
@@ -29,28 +29,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="/" class="navbar-brand">PyPy.js</a>
-      </div>
-      <div class="collapse navbar-collapse bs-navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="index.html">Overview</a></li>
-          <li><a href="editor.html">Editor</a></li>
-          <li><a href="https://github.com/pypyjs/pypyjs/releases/">Download</a></li>
-          <li><a href="https://github.com/pypyjs/pypyjs">Source</a></li>
-          <li><a href="http://github.com/pypyjs/pypyjs/issues">Bugs</a></li>
-          <li><a href="http://arewepythonyet.com/">Benchmarks</a></li>
-        </ul>
+        <a href="/" class="navbar-brand">BMI and Retirement Calculator</a>
       </div>
     </div>
   </div>
 
   <div class='container'>
 
-    <p>PyPy.js is an experiment in building a fast and compliant python environment for the web.</p>
-
-    <p>It uses the <a href="http://pypy.org/">PyPy</a> python interpreter, compiled for the web via <a href="http://emscripten.org">emscripten</a>, with a custom JIT backend that emits <a href="http://asmjs.org">asm.js</a> code at runtime.</p>
-
-    <p>Try it out below, or see the links above for benchmarks and download information.</p>
+    <p>PyPy.js is an experiment in building a fast and compliant python environment for the web. Use this terminal like you would a regular python terminal.</p>
 
     <p>&nbsp;</p>
 
@@ -84,14 +70,7 @@
         jqconsole.Reset();
         pypyjs.stdout('Welcome to PyPy.js!\n')
         // REPL forever via jqconsole prompt.
-        return pypyjs.repl(function(ps1) {
-          jqconsole.SetPromptLabel(ps1);
-          return new Promise(function(resolve, reject) {
-            jqconsole.Prompt(true, function (input) {
-              resolve(input);
-            });
-          });
-        });
+        pypyjs.execfile("/SWQA_assignment/main.py");
       }).then(null, function(err) {
         //jqconsole.Reset();
         jqconsole.Write('ERROR: ' + err);
